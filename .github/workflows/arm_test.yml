@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        arch: [armv6l, armv7l, aarch64]
+        #arch: [armv6l, armv7l, aarch64]
+        arch: [armv7l]
         include:
         - arch: armv6l
           cpu: arm1176
@@ -26,7 +27,8 @@ jobs:
           base_image: raspios_lite_arm64:latest
           cpu_info: raspberrypi_zero2_w_arm64_w
     steps:
-    - uses: pguyot/arm-runner-action@v2
+    - uses: actions/checkout@v4
+    - uses: pguyot/arm-runner-action@HEAD
       with:
         base_image: ${{ matrix.base_image }}
         cpu: ${{ matrix.cpu }}
