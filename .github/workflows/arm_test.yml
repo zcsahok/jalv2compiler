@@ -1,5 +1,11 @@
 name: 'Test architecture matrix'
-on: workflow_dispatch
+
+##on: workflow_dispatch
+on:
+  push:
+    branches:
+     - poc_arm_build_action
+
 jobs:
   build:
     runs-on: ubuntu-latest
