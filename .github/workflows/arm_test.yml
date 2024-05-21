@@ -1,4 +1,4 @@
-name: Test architecture matrix
+name: 'Test architecture matrix'
 on: workflow_dispatch
 jobs:
   build:
